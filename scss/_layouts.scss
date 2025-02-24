@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+  background: $bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  @include flex-center;
+  background: $primary-color;
+  padding: 20px;
+  color: white;
+}
+
+h1 { color: red}
