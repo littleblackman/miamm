@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../app/Core/Autoloader.php';
-App\Core\Autoloader::Register();
+
+require_once __DIR__ . '/../app/bootstrap.php';
 
 Use App\Controllers\HomeController;
 

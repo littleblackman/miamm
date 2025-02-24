@@ -5,7 +5,7 @@ namespace App\Controllers;
 
 class HomeController
 {
-    public function index()
+    public function index(): void
     {
         echo 'Hello World';
     }
