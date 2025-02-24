@@ -5,6 +5,9 @@ namespace App\Core;
 class ErrorHandler
 {
 
+    /**
+     * @return void
+     */
     public static function register(): void
     {
         set_error_handler([self::class, 'handleError']);
@@ -12,11 +15,23 @@ class ErrorHandler
         register_shutdown_function([self::class, 'handleShutdown']);
     }
 
+    /**
+     * @param int $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param int $errline
+     * @return void
+     * @throws \ErrorException
+     */
     public static function handleError(int $errno, string $errstr, string $errfile, int $errline): void
     {
         throw new \ErrorException($errstr, 0, $errno, $errfile, $errline);
     }
 
+    /**
+     * @param \Throwable $exception
+     * @return void
+     */
     // Gestion des exceptions
     public static function handleException(\Throwable $exception): void
     {
@@ -39,6 +54,9 @@ class ErrorHandler
         }
     }
 
+    /**
+     * @return void
+     */
     public static function handleShutdown(): void
     {
         $error = error_get_last();
