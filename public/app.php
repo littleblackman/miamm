@@ -1,3 +1,9 @@
-<?php echo $_GET['route'];?>
+<?php
+require_once __DIR__ . '/../app/Core/Autoloader.php';
+App\Core\Autoloader::Register();
 
-hello
+Use App\Controllers\HomeController;
+
+
+$controller = new HomeController();
+$controller->index();
