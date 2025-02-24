@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Vérifie si la requête ne cible pas un fichier ou un dossier existant
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirige tout vers a.php
+    RewriteRule ^(.*)$ app.php?route=$1 [QSA,L]
+</IfModule>
