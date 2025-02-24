@@ -17,7 +17,6 @@ class HomeController
 
     public function index(Request $request)
     {
-
         $data = [
             'title' => 'Home Page',
             'description' => 'Welcome to the home page'

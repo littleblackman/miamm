@@ -35,3 +35,13 @@
 [2025-02-24 13:27:37] Exception: ❌ Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
 [2025-02-24 13:27:38] Exception: ❌ Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
 [2025-02-24 13:27:49] Exception: Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
+[2025-02-24 17:21:07] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:22:27] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:22:32] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:22:33] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:23:00] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:23:04] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 17:23:05] Exception: Impossible de charger la classe : RecetteController (Tenté : /home/nitro/Sites/miamm/RecetteController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 37
+[2025-02-24 18:05:30] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3
+[2025-02-24 18:05:47] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3
+[2025-02-24 18:05:50] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3

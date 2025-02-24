@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Base</h1>
+    <h1>Les recettes miamm</h1>
     <?= $content ?>
 </body>
 </html>
