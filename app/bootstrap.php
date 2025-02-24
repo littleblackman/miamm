@@ -4,9 +4,12 @@ require_once __DIR__ . '/Core/Config.php';
 
 use App\Core\Autoloader;
 use App\Core\Config;
+use App\Core\ErrorHandler;
 
 Autoloader::register();
 Config::load(__DIR__ . '/.env');
+
+ErrorHandler::register();
 
 // Gérer les erreurs en fonction de l'environnement
 if (Config::get('APP_ENV') === 'dev' && Config::get('DISPLAY_ERRORS') === 'true') {
