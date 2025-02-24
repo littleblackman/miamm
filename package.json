@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "sass": "^1.85.0"
+  },
+
+  "scripts": {
+    "watch": "sass --watch scss/main.scss public/css/main.css",
+    "build": "sass scss/main.scss public/css/main.css --style compressed"
+  }
+}
