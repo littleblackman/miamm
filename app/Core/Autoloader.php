@@ -4,6 +4,10 @@ namespace App\Core;
 
 class Autoloader {
 
+    /**
+     * @return void
+     * @throws \Exception
+     */
     public static function Register(): void
     {
         spl_autoload_register(

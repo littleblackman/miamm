@@ -2,8 +2,9 @@
 
 require_once __DIR__ . '/../app/bootstrap.php';
 
-Use App\Controllers\HomeController;
+Use App\Core\Router;
 
 
-$controller = new HomeController();
-$controller->index();
+$router = new Router();
+$router->dispatch();
+

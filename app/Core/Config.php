@@ -7,6 +7,11 @@ class Config {
 
     private static array $config = [];
 
+    /**
+     * @param string $file
+     * @return void
+     * @throws \Exception
+     */
     public static function load (string $file): void
     {
         if(!file_exists($file)) {
@@ -21,6 +26,11 @@ class Config {
         }
     }
 
+    /**
+     * @param string $key
+     * @param string $default
+     * @return string
+     */
     public static function get(string $key, string $default = ''): string
     {
         return self::$config[$key] ?? $default;

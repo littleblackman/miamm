@@ -1,3 +1,17 @@
 [2025-02-24 10:29:33] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 20
 [2025-02-24 10:30:05] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 20
 [2025-02-24 10:30:24] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 20
+[2025-02-24 11:28:32] ErrorException: parse_ini_file(/home/nitro/Sites/miamm/app/Core/../app/routes.ini): Failed to open stream: No such file or directory in /home/nitro/Sites/miamm/app/Core/Router.php on line 15
+[2025-02-24 11:28:51] ErrorException: parse_ini_file(/home/nitro/Sites/miamm/app/Coreapp/routes.ini): Failed to open stream: No such file or directory in /home/nitro/Sites/miamm/app/Core/Router.php on line 15
+[2025-02-24 11:28:57] ErrorException: parse_ini_file(/home/nitro/Sites/miamm/app/Core../app/routes.ini): Failed to open stream: No such file or directory in /home/nitro/Sites/miamm/app/Core/Router.php on line 15
+[2025-02-24 11:29:04] ErrorException: parse_ini_file(/home/nitro/Sites/miamm/app/Core../../app/routes.ini): Failed to open stream: No such file or directory in /home/nitro/Sites/miamm/app/Core/Router.php on line 15
+[2025-02-24 11:29:16] Exception: Impossible de charger la classe : Core/Parser in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 20
+[2025-02-24 11:34:09] ErrorException: Undefined variable $routes in /home/nitro/Sites/miamm/app/Core/Router.php on line 38
+[2025-02-24 11:34:28] ErrorException: Undefined array key "route" in /home/nitro/Sites/miamm/app/Core/Router.php on line 38
+[2025-02-24 11:36:07] Error: Call to undefined method App\Core\Router::createRequest() in /home/nitro/Sites/miamm/public/app.php on line 10
+[2025-02-24 11:36:17] TypeError: App\Core\Router::extractUri(): Return value must be of type App\Core\Request, none returned in /home/nitro/Sites/miamm/app/Core/Router.php on line 43
+[2025-02-24 11:36:43] TypeError: App\Core\Router::extractUri(): Return value must be of type App\Core\Request, none returned in /home/nitro/Sites/miamm/app/Core/Router.php on line 43
+[2025-02-24 11:53:53] ErrorException: preg_match(): No ending delimiter '/' found in /home/nitro/Sites/miamm/app/Core/Router.php on line 46
+[2025-02-24 13:02:07] Exception: Impossible de charger la classe : RecetteController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:03:20] ParseError: syntax error, unexpected string content "", expecting "-" or identifier or variable or number in /home/nitro/Sites/miamm/app/Core/Router.php on line 55
+[2025-02-24 13:03:50] Exception: Impossible de charger la classe : RecetteController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24

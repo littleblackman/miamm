@@ -5,10 +5,11 @@ require_once __DIR__ . '/Core/Config.php';
 use App\Core\Autoloader;
 use App\Core\Config;
 use App\Core\ErrorHandler;
+use App\Core\Router;
 
+// load all classes
 Autoloader::register();
 Config::load(__DIR__ . '/.env');
-
 ErrorHandler::register();
 
 // Gérer les erreurs en fonction de l'environnement
