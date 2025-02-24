@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/Core/Autoloader.php';
 require_once __DIR__ . '/Core/Config.php';
+require_once __DIR__ . '/Core/Helpers.php';
 
 use App\Core\Autoloader;
 use App\Core\Config;
@@ -10,7 +11,7 @@ use App\Core\Router;
 // load all classes
 Config::load(__DIR__ . '/.env');
 Autoloader::register();
-//ErrorHandler::register();
+ErrorHandler::register();
 
 // Gérer les erreurs en fonction de l'environnement
 if (Config::get('APP_ENV') === 'dev' && Config::get('DISPLAY_ERRORS') === 'true') {
