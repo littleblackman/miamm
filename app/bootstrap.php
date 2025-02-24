@@ -8,9 +8,9 @@ use App\Core\ErrorHandler;
 use App\Core\Router;
 
 // load all classes
-Autoloader::register();
 Config::load(__DIR__ . '/.env');
-ErrorHandler::register();
+Autoloader::register();
+//ErrorHandler::register();
 
 // Gérer les erreurs en fonction de l'environnement
 if (Config::get('APP_ENV') === 'dev' && Config::get('DISPLAY_ERRORS') === 'true') {

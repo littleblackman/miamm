@@ -3,6 +3,7 @@
 namespace App\Core;
 
 Use App\Core\Request;
+Use App\Controllers\HomeController;
 
 class Router
 {
@@ -78,7 +79,6 @@ class Router
     public function dispatch(): void
     {
 
-
         if(!$this->extractUri()) {
             http_response_code(404);
             return;
@@ -87,7 +87,7 @@ class Router
         $request = $this->request;
         $controller = $request->getController();
         $action = $request->getAction();
-
+        
         $controller = new $controller();
         $controller->$action($request);
     }

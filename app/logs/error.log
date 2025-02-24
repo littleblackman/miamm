@@ -15,3 +15,23 @@
 [2025-02-24 13:02:07] Exception: Impossible de charger la classe : RecetteController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
 [2025-02-24 13:03:20] ParseError: syntax error, unexpected string content "", expecting "-" or identifier or variable or number in /home/nitro/Sites/miamm/app/Core/Router.php on line 55
 [2025-02-24 13:03:50] Exception: Impossible de charger la classe : RecetteController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:09:48] Exception: Impossible de charger la classe : RecetteController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:10:03] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:10:51] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:10:54] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:10:56] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:11:58] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 24
+[2025-02-24 13:13:26] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 28
+[2025-02-24 13:13:35] Exception: Impossible de charger la classe : HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 28
+[2025-02-24 13:21:12] Exception: Impossible de charger la classe : app/HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 27
+[2025-02-24 13:21:26] Exception: Impossible de charger la classe : app/HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 29
+[2025-02-24 13:22:51] Exception: Impossible de charger la classe : app/HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 30
+[2025-02-24 13:23:10] Exception: Impossible de charger la classe : app/HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 30
+[2025-02-24 13:24:28] Error: Class "Controllers/HomeController" not found in /home/nitro/Sites/miamm/app/Core/Router.php on line 91
+[2025-02-24 13:24:42] ParseError: Unclosed '{' on line 80 in /home/nitro/Sites/miamm/app/Core/Router.php on line 105
+[2025-02-24 13:24:53] Error: Class "Controllers\HomeController" not found in /home/nitro/Sites/miamm/app/Core/Router.php on line 91
+[2025-02-24 13:25:21] Exception: Impossible de charger la classe : app/HomeController in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 28
+[2025-02-24 13:27:33] Exception: ❌ Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
+[2025-02-24 13:27:37] Exception: ❌ Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
+[2025-02-24 13:27:38] Exception: ❌ Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
+[2025-02-24 13:27:49] Exception: Impossible de charger la classe : HomeController (Tenté : /home/nitro/Sites/miamm/app/HomeController.php) in /home/nitro/Sites/miamm/app/Core/Autoloader.php on line 34
