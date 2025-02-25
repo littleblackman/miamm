@@ -45,3 +45,17 @@
 [2025-02-24 18:05:30] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3
 [2025-02-24 18:05:47] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3
 [2025-02-24 18:05:50] ErrorException: Undefined variable $recettes in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 3
+[2025-02-25 09:55:14] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 09:55:33] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 09:56:19] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:44:53] Error: Call to undefined function App\Core\apcu_exists() in /home/nitro/Sites/miamm/app/Core/Router.php on line 31
+[2025-02-25 10:48:34] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:49:33] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:49:38] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:49:58] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:50:01] ArgumentCountError: link() expects exactly 2 arguments, 1 given in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:50:45] Error: Call to undefined function getLink() in /home/nitro/Sites/miamm/app/Views/layouts/default.php on line 16
+[2025-02-25 10:53:43] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-25 10:54:34] ErrorException: Undefined variable $namedRoutes in /home/nitro/Sites/miamm/app/Core/Router.php on line 22
+[2025-02-25 10:55:11] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-25 10:55:46] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
