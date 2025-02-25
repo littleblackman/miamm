@@ -18,6 +18,32 @@ class Router
         foreach ($routes as $route) {
             $this->add($route['name'], $route['method'], $route['path'], $route['controller'], $route['action']);
         }
+        $this->createCacheRoute();
+   }
+
+   public function clearRoutes(): void
+   {
+       unset($_SESSION['namedRoutes']);
+   }
+
+   public function createCacheRoute(): void
+   {
+       if(!isset($_SESSION['namedRoutes'])) {
+           $_SESSION['namedRoutes'] = $this->getNamedRoutes();
+       }
+   }
+
+    public function refreshCacheRoute(): void
+    {
+        $_SESSION['namedRoutes'] = $this->getNamedRoutes();
+    }
+
+    /**
+     * @return array
+     */
+   public function getNamedRoutes(): array
+   {
+         return $this->namedRoutes;
    }
 
     /**
@@ -31,6 +57,7 @@ class Router
     private function add(string $name, string $method, string $path, string $controller, string $action): void
    {
        $params = [];
+       $uri = $path;
        preg_match_all('/\{(\w+)\}/', $path, $matches);
 
        if (!empty($matches[1])) {
@@ -38,8 +65,8 @@ class Router
        }
 
        $path = preg_replace('/\{(\w+)\}/', '([\w-]+)', $path);
-       $this->routes[] = compact('name', 'method', 'path', 'controller', 'action', 'params');
-       $this->namedRoutes[$name] = $path;
+       $this->routes[] = compact('name', 'method', 'path', 'controller', 'action', 'params', 'uri');
+       $this->namedRoutes[$name] = $uri;
    }
 
    public function extractUri(): bool
