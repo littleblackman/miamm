@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/Core/Autoloader.php';
 require_once __DIR__ . '/Core/Config.php';
 require_once __DIR__ . '/Core/Helpers.php';
@@ -6,7 +7,6 @@ require_once __DIR__ . '/Core/Helpers.php';
 use App\Core\Autoloader;
 use App\Core\Config;
 use App\Core\ErrorHandler;
-use App\Core\Router;
 
 // load all classes
 Config::load(__DIR__ . '/.env');
@@ -15,6 +15,7 @@ ErrorHandler::register();
 
 // Gérer les erreurs en fonction de l'environnement
 if (Config::get('APP_ENV') === 'dev' && Config::get('DISPLAY_ERRORS') === 'true') {
+    unset($_SESSION['namedRoutes']);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
