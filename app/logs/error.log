@@ -59,3 +59,7 @@
 [2025-02-25 10:54:34] ErrorException: Undefined variable $namedRoutes in /home/nitro/Sites/miamm/app/Core/Router.php on line 22
 [2025-02-25 10:55:11] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
 [2025-02-25 10:55:46] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-25 15:35:41] Error: Call to undefined method App\Domain\Recette\Recette::getImage() in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 12
+[2025-02-25 15:35:53] Error: Call to undefined method App\Domain\Recette\Recette::getImage() in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 12
+[2025-02-25 15:36:36] Error: Call to undefined method App\Domain\Recette\Recette::getImage() in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 12
+[2025-02-25 15:36:54] Error: Call to undefined method App\Domain\Recette\Recette::getTitle() in /home/nitro/Sites/miamm/app/Views/pages/recette/index.php on line 11

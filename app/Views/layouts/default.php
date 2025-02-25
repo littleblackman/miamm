@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <title>Miamm - Les petites recettes futées</title>
 </head>
@@ -13,7 +14,13 @@
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="<?= getLink('home');?>">🍽️ Miamm</a>
+                <a class="navbar-item" href="<?= getLink('home');?>">
+                        <span class="material-icons navbar-item">home</span>
+                    Miamm
+                </a>
+                <a href="https://www.petitfute.com/" target="_blank" class="navbar-item">
+                    Les petites recettes futées
+                </a>
 
                 <!-- Bouton Burger pour Mobile -->
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
