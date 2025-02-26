@@ -6,6 +6,7 @@ use AllowDynamicProperties;
 use App\Domain\Recette\RecetteRepository;
 use App\Domain\Recette\Recette;
 use App\Services\ScraperService;
+use App\Services\IAService;
 
 #[AllowDynamicProperties]
 class RecetteService {
@@ -15,6 +16,7 @@ class RecetteService {
     {
         $this->repository = new RecetteRepository();
         $this->scraperService = new ScraperService();
+        $this->iaService = new IAService();
     }
 
     public function getAllRecettes(): array
@@ -43,8 +45,10 @@ class RecetteService {
 
     public function createRecetteFromData(array $data): Recette
     {
-        $recette = new Recette();
-        $recette->hydrate($data);
+
+        dd($data);
+
+
         return $recette;
     }
 
@@ -63,7 +67,74 @@ class RecetteService {
 
     public function createRecetteFromIA(string $html, array $data): Recette
     {
-        // IA to create recette
-    }
 
+        // transforme data to string
+        $dataJson = json_encode($data);
+
+
+       $prompt = "Tu es un expert en extraction de données structurées. Voici une recette extraite d'un site de cuisine.  
+                    Je te fournis :  
+                    1. **Le texte brut** de la recette  
+                    2. **Le HTML** de la page  
+                    3. **Les données déjà extraites** sous forme d'un tableau associatif (JSON incomplet)  
+                    
+                    Ton objectif est de **corriger et compléter ces données de manière stricte**.  
+                    - Remplis les valeurs manquantes (`difficulty`, `cost`, `ingredients` complets avec quantités et unités).  
+                    - Corrige les erreurs d’extraction.  
+                    - Assure-toi que toutes les informations du HTML sont bien intégrées dans le JSON.  
+                    - Ne modifie pas les clés du JSON existant, mais complète et corrige les valeurs.  
+                    - Retourne uniquement le JSON final **sans ajout de texte ou de commentaires.
+                    ---------
+                    voici le résultat du scraping :
+                    ".$html." et voici les données scrapées en JSON : ".$dataJson." 
+                    
+                    NB: dans le json ajoute un champs 'description', 'tags' et un champs 'category' en fonction de ce que tu as compris.
+                    Pour la category c'est plutot simple comme entrée, plat, dessert, etc...
+                    Pour les tags tu peux mettre des mots clés en rapport avec la recette. Séparé par des vraies virgules.
+                    
+                    N'oublie pas je veux strictement en retour le tableau associatif JSON complet et corrigé.
+                    " ;
+      // $result = $this->iaService->send($prompt); // uncomment
+
+       // mock result
+       $result = "```json
+                    {
+                        \"title\": \"Coquilles Saint Jacques sur lit de poireaux\",
+                        \"time_total\": \"35 min\",
+                        \"time_preparation\": \"15 min\",
+                        \"time_repos\": \"-\",
+                        \"time_cuisson\": \"20 min\",
+                        \"difficulty\": \"facile\",
+                        \"cost\": \"assez cher\",
+                        \"ingredients\": [
+                            { \"name\": \"muscade\", \"quantity\": \"1 pincée\" },
+                            { \"name\": \"sel\", \"quantity\": \"1 pincée\" },
+                            { \"name\": \"poivre\", \"quantity\": \"1 pincée\" },
+                            { \"name\": \"huile\", \"quantity\": \"2\", \"unit\": \"cuillères à soupe\" },
+                            { \"name\": \"crème fraîche\", \"quantity\": \"2\", \"unit\": \"cuillères à soupe\" },
+                            { \"name\": \"farine\", \"quantity\": \"2\", \"unit\": \"cuillères à soupe\" },
+                            { \"name\": \"poireaux\", \"quantity\": \"4\" },
+                            { \"name\": \"noix de saint-jacques\", \"quantity\": \"12\" }
+                        ],
+                        \"steps\": [
+                            \"Ne garder que les blancs des poireaux. Les émincer en rondelles les plus fines possibles (1mm).\", 
+                            \"Les faire cuire à feu doux dans une poêle avec 1/2 verre d'eau jusqu'à ce que les poireaux soient parfaitement fondus et qu'il ne reste plus d'eau. Éventuellement, égoutter après cuisson pour retirer l'excédent d'eau.\", 
+                            \"Ajouter dans la poêle la crème fraîche, le sel, le poivre, ainsi qu'une bonne pincée de muscade. Réserver au chaud.\", 
+                            \"Pendant la cuisson des poireaux, nettoyer les coquilles Saint Jacques. Les éponger sur du papier absorbant. Les poivrer légèrement sur les deux faces et les passer à la farine.\", 
+                            \"Faire chauffer l'huile dans une poêle et faire revenir rapidement les coquilles sur chaque face.\", 
+                            \"Étaler la fondue de poireaux bien chaude dans 4 assiettes et disposer les noix de Saint Jacques dessus. Servir aussitôt.\"
+                        ]
+                    }
+                    ```";
+
+       $jsonString = trim($result, "```json \n");
+       $data = json_decode($jsonString, true);
+
+        $data['description'] = "Un délicieux plat principal de filet mignon garni de roquefort et arrosé de Porto, parfait pour impressionner vos invités.";
+        $data['tags'] = "filet mignon, roquefort, porto, viande, plat principal";
+        $data['category'] = "plat";
+
+       return $this->createRecetteFromData($data);
+
+    }
 }

@@ -86,3 +86,21 @@
 [2025-02-26 16:33:47] Error: Call to undefined method App\Domain\Recette\RecetteService::validData() in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 36
 [2025-02-26 16:33:58] ErrorException: Array to string conversion in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 46
 [2025-02-26 16:35:29] ErrorException: Array to string conversion in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 48
+[2025-02-26 17:39:07] ArgumentCountError: Too few arguments to function App\Services\IAService::__construct(), 0 passed in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 19 and exactly 1 expected in /home/nitro/Sites/miamm/app/Services/IAService.php on line 11
+[2025-02-26 17:39:48] ArgumentCountError: Too few arguments to function App\Services\IAService::__construct(), 0 passed in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 19 and exactly 1 expected in /home/nitro/Sites/miamm/app/Services/IAService.php on line 11
+[2025-02-26 17:40:17] ArgumentCountError: Too few arguments to function App\Services\IAService::__construct(), 0 passed in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 19 and exactly 1 expected in /home/nitro/Sites/miamm/app/Services/IAService.php on line 11
+[2025-02-26 17:41:13] ErrorException: Declaration of App\Services\OpenAIClientService::send($promptText) must be compatible with App\Services\Interfaces\IAClientInterface::send(string $promptText): array|string in /home/nitro/Sites/miamm/app/Services/OpenAIClientService.php on line 17
+[2025-02-26 17:41:52] Error: Call to undefined function App\Services\env() in /home/nitro/Sites/miamm/app/Services/OpenAIClientService.php on line 13
+[2025-02-26 17:43:10] Error: Typed property App\Domain\Recette\Recette::$titre must not be accessed before initialization in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 36
+[2025-02-26 18:05:08] ErrorException: Array to string conversion in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 83
+[2025-02-26 18:32:27] ErrorException: Undefined array key "title" in /home/nitro/Sites/miamm/app/Services/ScraperService.php on line 184
+[2025-02-26 18:33:12] TypeError: App\Domain\Recette\RecetteService::createRecetteFromData(): Argument #1 ($data) must be of type array, string given, called in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 91 in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 46
+[2025-02-26 18:34:59] TypeError: App\Domain\Recette\RecetteService::createRecetteFromData(): Argument #1 ($data) must be of type array, string given, called in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 94 in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 46
+[2025-02-26 18:39:08] ParseError: syntax error, unexpected identifier "title" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 92
+[2025-02-26 18:40:41] ParseError: syntax error, unexpected identifier "title" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 92
+[2025-02-26 18:40:55] ParseError: syntax error, unexpected identifier "title" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 92
+[2025-02-26 18:41:44] ParseError: syntax error, unexpected identifier "eau" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 92
+[2025-02-26 18:43:02] ParseError: syntax error, unexpected identifier "eau" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 92
+[2025-02-26 18:50:15] TypeError: App\Domain\Recette\RecetteService::createRecetteFromData(): Return value must be of type App\Domain\Recette\Recette, none returned in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 52
+[2025-02-26 20:28:16] ErrorException: Undefined array key "title" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 50
+[2025-02-26 20:34:22] Error: Call to undefined method App\Domain\Recette\Recette::setTimeTotal() in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 51

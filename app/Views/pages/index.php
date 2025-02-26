@@ -23,11 +23,6 @@
             <!-- Exemple de recette -->
             <div class="column is-4">
                 <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="/images/recette1.jpg" alt="Nom de la recette">
-                        </figure>
-                    </div>
                     <div class="card-content">
                         <h3 class="title is-5">🍕 Pizza maison</h3>
                         <p>Une délicieuse pizza faite maison avec une pâte croustillante.</p>

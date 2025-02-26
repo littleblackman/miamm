@@ -53,8 +53,6 @@ class ScraperService
                                     'ingredient_unit' => "",
                                     'steps' => "//div[@class='rd-steps']//ul/li"
                                 ]
-
-
     ];
 
 
@@ -83,12 +81,23 @@ class ScraperService
         $this->domain = $this->getDomain($url);
         $html = $this->getHtml($url);
         $html = $this->cleanHtml($html);
-        $data = [];
+        $data = [
+            "title" => "",
+            "time_total" => "",
+            "time_preparation" => "",
+            "time_repos" => "",
+            "time_cuisson" => "",
+            "difficulty" => "",
+            "cost" => "",
+            "ingredients" => [],
+            "steps" => []
+        ];
 
         // if is config domain
        if(array_key_exists($this->domain, $this->config)) {
             $data = $this->extractDataFromHtml($html, $this->config[$this->domain]);
         }
+
        // return html & data to Service
         return ['html' => $html, 'data' => $data];
     }
@@ -117,7 +126,7 @@ class ScraperService
 
     private function cleanHtml(string $html): string
     {
-        // Supprime head, scripts, styles et meta
+        // Supprime head, scripts, styles, meta, links et commentaires
         $html = preg_replace('/<head.*?>.*?<\/head>/is', '', $html);
         $html = preg_replace('/<script.*?>.*?<\/script>/is', '', $html);
         $html = preg_replace('/<style.*?>.*?<\/style>/is', '', $html);
@@ -125,11 +134,44 @@ class ScraperService
         $html = preg_replace('/<link.*?>/is', '', $html);
         $html = preg_replace('/<!--.*?-->/is', '', $html);
 
-        // Supprime les espaces inutiles
+        // Supprime les balises de tracking et Google Tag Manager
+        $html = preg_replace('/<noscript.*?>.*?<\/noscript>/is', '', $html);
+        $html = preg_replace('/<iframe.*?>.*?<\/iframe>/is', '', $html);
+
+        // Supprime les sections non pertinentes
+        $html = preg_replace('/<nav.*?>.*?<\/nav>/is', '', $html);  // Navigation
+        $html = preg_replace('/<header.*?>.*?<\/header>/is', '', $html); // En-tête
+        $html = preg_replace('/<footer.*?>.*?<\/footer>/is', '', $html); // Pied de page
+        $html = preg_replace('/<aside.*?>.*?<\/aside>/is', '', $html); // Barres latérales
+        $html = preg_replace('/<div class="(mrtn-header|mrtn-footer|ad-container|recipe-buttons-container|mrtn-sidebar).*?>.*?<\/div>/is', '', $html); // Conteneurs pub et menus
+
+        // Supprime les icônes et boutons de partage
+        $html = preg_replace('/<div class="recipe-buttons-share-modal.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="footer-social-media.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<button.*?>.*?<\/button>/is', '', $html);
+
+        // Supprime les publicités et recommandations
+        $html = preg_replace('/<div class="recipe-like-too.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="seo-links-tag-page.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="mrtn-home-recipe-card.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="mrtn-modal.*?>.*?<\/div>/is', '', $html);
+
+        // Supprime les commentaires et avis
+        $html = preg_replace('/<div class="recipe-reviews-list.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="recipe-reviews-list__review.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="recipe-reviews-list__rate-card.*?>.*?<\/div>/is', '', $html);
+
+        // Supprime la newsletter et l'abonnement au magazine
+        $html = preg_replace('/<div class="recipe-newsletter.*?>.*?<\/div>/is', '', $html);
+        $html = preg_replace('/<div class="magazine-autopromo.*?>.*?<\/div>/is', '', $html);
+
+        // Nettoyage des espaces superflus
         $html = preg_replace('/\s+/', ' ', $html);
+        $html = preg_replace('/>\s+</', '><', $html); // Réduit les espaces entre balises
 
         return trim($html);
     }
+
 
     public function extractDataFromHtml(string $html, array $siteConfig): array
     {
