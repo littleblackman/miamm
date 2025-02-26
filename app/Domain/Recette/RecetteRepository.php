@@ -26,16 +26,16 @@ class RecetteRepository {
         $stmt->execute(['id' => $id]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $data ? new Recette($data['titre'], $data['description'], $data['categorie']) : null;
+        return $data ? new Recette($data['title'], $data['description'], $data['category']) : null;
     }
 
     public function save(Recette $recette): bool
     {
-        $stmt = $this->manager->prepare("INSERT INTO recette (titre, description, categorie) VALUES (:titre, :description, :categorie)");
+        $stmt = $this->manager->prepare("INSERT INTO recette (title, description, category) VALUES (:title, :description, :category)");
         return $stmt->execute([
-            'titre' => $recette->getTitre(),
+            'title' => $recette->getTitle(),
             'description' => $recette->getDescription(),
-            'categorie' => $recette->getCategorie()
+            'categorie' => $recette->getCategory()
         ]);
     }
 }

@@ -9,16 +9,28 @@ class Recette {
     use Hydrator;
 
     private ?int $id = null;
-    private string $titre;
+    private string $title;
     private string $description;
-    private string $categorie;
+    private string $category;
+
+    private string $time_total;
+
+    private string $time_preparation;
+
+    private string $time_repos;
+
+    private string $time_cuisson;
+
+    private string $difficulty;
+
+    private string $cost;
+
+    private string $steps;
     private string $createdAt;
 
     public function __construct($array = null)
     {
-        if ($array) {
-            $this->hydrate($array);
-        }
+        if ($array) $this->hydrate($array);
     }
 
     public function getId(): ?int
@@ -31,14 +43,14 @@ class Recette {
         $this->id = $id;
     }
 
-    public function getTitre(): string
+    public function getTitle(): string
     {
-        return $this->titre;
+        return $this->title;
     }
 
-    public function setTitre(string $titre): void
+    public function setTitle(string $title): void
     {
-        $this->titre = $titre;
+        $this->title = $title;
     }
 
     public function getDescription(): string
@@ -51,14 +63,14 @@ class Recette {
         $this->description = $description;
     }
 
-    public function getCategorie(): string
+    public function getCategory(): string
     {
-        return $this->categorie;
+        return $this->category;
     }
 
-    public function setCategorie(string $categorie): void
+    public function setCategory(string $category): void
     {
-        $this->categorie = $categorie;
+        $this->category = $category;
     }
 
     public function getCreatedAt(): string
@@ -71,8 +83,84 @@ class Recette {
         $this->createdAt = $createdAt;
     }
 
+    public function getTimeTotal(): string
+    {
+        return $this->time_total;
+    }
 
+    public function setTimeTotal(string $time_total): void
+    {
+        $this->time_total = $time_total;
+    }
 
+    public function getTimePreparation(): string
+    {
+        return $this->time_preparation;
+    }
 
+    public function setTimePreparation(string $time_preparation): void
+    {
+        $this->time_preparation = $time_preparation;
+    }
+
+    public function getTimeRepos(): string
+    {
+        return $this->time_repos;
+    }
+
+    public function setTimeRepos(string $time_repos): void
+    {
+        $this->time_repos = $time_repos;
+    }
+
+    public function getTimeCuisson(): string
+    {
+        return $this->time_cuisson;
+    }
+
+    public function setTimeCuisson(string $time_cuisson): void
+    {
+        $this->time_cuisson = $time_cuisson;
+    }
+
+    public function getDifficulty(): string
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty(string $difficulty): void
+    {
+        $this->difficulty = $difficulty;
+    }
+
+    public function getCost(): string
+    {
+        return $this->cost;
+    }
+
+    public function setCost(string $cost): void
+    {
+        $this->cost = $cost;
+    }
+
+    public function getSteps(): string
+    {
+        return json_decode($this->steps, true) ?? [];
+    }
+
+    /**
+     * set steps with array or json
+     * @param string|array $steps
+     * @return Object
+     */
+    public function setSteps(string|array $steps): Object
+    {
+        // check if array
+        if (is_array($steps)) {
+            $steps = json_encode($steps, JSON_UNESCAPED_UNICODE);
+        }
+        $this->steps = $steps;
+        return $this;
+    }
 
 }
