@@ -28,7 +28,7 @@ class RecetteService {
         return $this->repository->save($recette);
     }
 
-    public function createFromUrl(string $url): void
+    public function createFromUrl(string $url): Recette
     {
         ['html' => $html, 'data' => $data] = $this->scraperService->getContent($url);
         $is_valid = $this->isValidData($data);
@@ -64,8 +64,6 @@ class RecetteService {
     public function createRecetteFromIA(string $html, array $data): Recette
     {
         // IA to create recette
-        $recette = new Recette();
-        $recette->hydrate($data);
-        return $recette;
     }
+
 }
