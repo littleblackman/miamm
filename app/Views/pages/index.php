@@ -7,10 +7,10 @@
             <p class="subtitle">
                 Le secret des petites recettes futées
             </p>
-            <a href="/recettes" class="button is-light is-large">
+            <a href="<?= getLink('recettes');?>" class="button is-light is-large">
                 🔎 Explorer les recettes
             </a>
-            <a href="/ajouter-une-recette" class="button is-warning is-large">
+            <a href="<?= getLink('recette_create');?>" class="button is-warning is-large">
                 ➕ Ajouter une recette
             </a>
         </div>

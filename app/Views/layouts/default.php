@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/cuisine_32x32.png" />
     <link rel="stylesheet" href="/css/main.css">
     <title>Miamm - Les petites recettes futées</title>
 </head>
@@ -15,7 +16,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="<?= getLink('home');?>">
-                        <span class="material-icons navbar-item">home</span>
+                    <span class="material-icons navbar-item">home</span>
                     Miamm
                 </a>
                 <a href="https://www.petitfute.com/" target="_blank" class="navbar-item">
@@ -33,8 +34,8 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item" href="/">Accueil</a>
-                    <a class="navbar-item" href="/recettes">Recettes</a>
-                    <a class="navbar-item" href="/ajouter-une-recette">Ajouter</a>
+                    <a class="navbar-item" href="<?= getLink('recettes');?>">Recettes</a>
+                    <a class="navbar-item" href="<?= getLink('recette_create');?>">Ajouter</a>
                 </div>
             </div>
         </div>
