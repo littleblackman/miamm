@@ -7,28 +7,29 @@ use App\Domain\Recette\RecetteRepository;
 use App\Domain\Recette\Recette;
 use App\Services\ScraperService;
 use App\Services\IAService;
+use App\Domain\Ingredient\IngredientRepository;
 
 #[AllowDynamicProperties]
 class RecetteService {
-    private RecetteRepository $repository;
+    private RecetteRepository $recetteRepository;
+    private ScraperService $scraperService;
+    private IAService $iaService;
+    private IngredientRepository $ingredientRepository;
+
 
     public function __construct()
     {
-        $this->repository = new RecetteRepository();
+        $this->recetteRepository = new RecetteRepository();
         $this->scraperService = new ScraperService();
         $this->iaService = new IAService();
+        $this->ingredientRepository = new IngredientRepository();
     }
 
     public function getAllRecettes(): array
     {
-        return $this->repository->findAll();
+        return $this->recetteRepository->findAll();
     }
 
-    public function createRecette(string $titre, string $description, string $categorie): bool
-    {
-        $recette = new Recette($titre, $description, $categorie);
-        return $this->repository->save($recette);
-    }
 
     public function createFromUrl(string $url): Recette
     {
@@ -46,8 +47,21 @@ class RecetteService {
     public function createRecetteFromData(array $data): Recette
     {
 
-        dd($data);
+        $ingredients = $data['ingredients'];
+        unset($data['ingredients']);
 
+        // save recette
+        $recette = new Recette($data);
+        $recette = $this->recetteRepository->save($recette);
+
+
+        // save jointure ingredients_recette
+        foreach($ingredients as $ingredient) {
+            $this->recetteRepository->addIngredient($recette->getId(), $ingredient);
+        }
+
+
+        exit;
 
         return $recette;
     }
