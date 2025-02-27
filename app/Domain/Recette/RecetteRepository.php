@@ -88,11 +88,19 @@ class RecetteRepository {
     public function addIngredient(int $recetteId, array $ingredient): bool
     {
         // on vérifie si ingredients existe
-        $sql = "INSERT INTO ingredient (name) VALUES (:name) 
-            ON DUPLICATE KEY UPDATE id=LAST_INSERT_ID(id)";
+        $sql = "SELECT * FROM ingredient WHERE name = :name";
         $stmt = $this->manager->prepare($sql);
         $stmt->execute(['name' => $ingredient['name']]);
-        $ingredientId = $this->manager->lastInsertId();
+
+        if($stmt->rowCount() > 0) {
+            $ingredientId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+        } else {
+            // on ajoute l'ingredient
+            $sql = "INSERT INTO ingredient (name) VALUES (:name)";
+            $stmt = $this->manager->prepare($sql);
+            $stmt->execute(['name' => $ingredient['name']]);
+            $ingredientId = $this->manager->lastInsertId();
+        }
 
         // on ajoute la jointure
         $sql = "INSERT INTO recette_ingredient (recette_id, ingredient_id, quantity, unit) VALUES (:recette_id, :ingredient_id, :quantity, :unit)";
