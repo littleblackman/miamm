@@ -63,4 +63,9 @@ class RecetteController
         $recette = $this->recetteService->find($request->param('id'));
         return $this->view->render('pages.recette.show', ['recette' => $recette]);
     }
+
+    public function delete(Request $request) {
+        $recette = $this->recetteService->delete($request->param('id'));
+        return $this->view->redirect('recette_list');
+    }
 }

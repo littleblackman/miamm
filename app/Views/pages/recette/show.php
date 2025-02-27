@@ -2,6 +2,11 @@
     <div class="container">
         <h1 class="title has-text-centered"><?= $recette->getTitle(); ?></h1>
 
+        <!-- Bouton Modifier -->
+        <div class="has-text-centered">
+            <a href="<?= getLink('recette_edit', ['id' => $recette->getId()]); ?>" class="button is-warning">✏️ Modifier</a>
+        </div>
+
         <!-- Informations générales -->
         <div class="box">
             <h2 class="subtitle">📌 Informations</h2>
@@ -50,6 +55,15 @@
             <?php else: ?>
                 <p class="has-text-grey">Aucune étape spécifiée.</p>
             <?php endif; ?>
+        </div>
+
+        <div class="mb-5">
+            <h3>Source <?= $recette->getSite();?></h3>
+            <p>
+                <a href="?= $recette->getOriginUrl();?>" target="_blank">
+                    <?= $recette->getOriginUrl();?>
+                </a>
+            </p>
         </div>
 
         <!-- Bouton de retour -->

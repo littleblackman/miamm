@@ -27,6 +27,10 @@ class Recette {
 
     public string $steps;
 
+    public string $site;
+
+    public string $origin_url;
+
     public array $ingredients = [];
     public string $createdAt;
 
@@ -174,5 +178,27 @@ class Recette {
     {
         return $this->ingredients;
     }
+
+    public function getOriginUrl(): string
+    {
+        return $this->origin_url;
+    }
+
+    public function setOriginUrl(string $origin_url): void
+    {
+        $this->origin_url = $origin_url;
+    }
+
+    public function getSite(): string
+    {
+        return $this->site;
+    }
+
+    public function setSite(string $site): void
+    {
+        $this->site = $site;
+    }
+
+
 
 }

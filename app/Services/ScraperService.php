@@ -8,6 +8,8 @@ class ScraperService
 
     private ?string $domain;
 
+    private string $url;
+
 
     private array $config = [
                                 'marmiton.org' => [
@@ -78,6 +80,7 @@ class ScraperService
 
     public function getContent($url): ?array
     {
+        $this->url = $url;
         $this->domain = $this->getDomain($url);
         if(!$html = $this->getHtml($url)) return null;
 
@@ -93,7 +96,9 @@ class ScraperService
             "difficulty" => "",
             "cost" => "",
             "ingredients" => [],
-            "steps" => []
+            "steps" => [],
+            "site" => "",
+            "origin_url" => ""
         ];
 
         // if is config domain
@@ -235,7 +240,9 @@ class ScraperService
             'difficulty' => $difficulty,
             'cost' => $cost,
             'ingredients' => $ingredients,
-            'steps' => $steps
+            'steps' => $steps,
+            'site' => $this->domain,
+            'origin_url' => $this->url
         ];
     }
 

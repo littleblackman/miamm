@@ -143,3 +143,8 @@
 [2025-02-27 14:52:24] Error: Call to a member function getId() on null in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 1
 [2025-02-27 15:00:31] ErrorException: Undefined array key "name" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 93
 [2025-02-27 15:02:05] ErrorException: Undefined variable $ingredients in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 92
+[2025-02-27 15:20:17] TypeError: App\Domain\Recette\Recette::setSite(): Argument #1 ($site) must be of type string, null given, called in /home/nitro/Sites/miamm/app/Core/Trait/Hydrator.php on line 11 in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 197
+[2025-02-27 15:20:49] TypeError: Cannot assign null to property App\Domain\Recette\Recette::$site of type string in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 199
+[2025-02-27 15:21:23] TypeError: App\Domain\Recette\Recette::setSite(): Argument #1 ($site) must be of type string, null given, called in /home/nitro/Sites/miamm/app/Core/Trait/Hydrator.php on line 11 in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 197
+[2025-02-27 15:36:11] ErrorException: Undefined property: App\Controllers\RecetteController::$requestService in /home/nitro/Sites/miamm/app/Controllers/RecetteController.php on line 68
+[2025-02-27 15:56:06] ErrorException: Creation of dynamic property App\Controllers\HomeController::$recetteService is deprecated in /home/nitro/Sites/miamm/app/Controllers/HomeController.php on line 17

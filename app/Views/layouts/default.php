@@ -33,7 +33,6 @@
 
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="/">Accueil</a>
                     <a class="navbar-item" href="<?= getLink('recettes');?>">Recettes</a>
                     <a class="navbar-item" href="<?= getLink('recette_create');?>">Ajouter</a>
                 </div>

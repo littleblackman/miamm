@@ -94,7 +94,18 @@
         </div>
     </div>
 
-    <div class="flex" style="display: flex; justify-content: space-around;">
+
+    <div class="field">
+        <div class="control">
+            <input type="text" name="origin_url" class="input" value="<?= $recette->getOriginUrl();?>" placeholder="Url de la recette"/>
+        </div>
+        <div class="control">
+            <input type="text" name="site" class="input" value="<?= $recette->getSite();?>" placeholder="Site web"/>
+        </div>
+    </div>
+
+
+        <div class="flex" style="display: flex; justify-content: space-around;">
         <div class="control">
             <button class="button is-primary" type="submit">Mettre à jour</button>
         </div>
@@ -102,6 +113,12 @@
         <div class="control">
             <a href="<?= getLink('recette_show', ['id' => $recette->getId()]) ?>" class="button is-info">
                 Voir la recette
+            </a>
+        </div>
+
+        <div class="control">
+            <a href="<?= getLink('recette_delete', ['id' => $recette->getId()]) ?>" class="button is-danger">
+                Supprimer
             </a>
         </div>
     </div>

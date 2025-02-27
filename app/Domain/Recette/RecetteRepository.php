@@ -8,20 +8,6 @@ use PDO;
 class RecetteRepository {
     private PDO $manager;
 
-    private $fields = [
-        'title',
-        'description',
-        'category',
-        'time_total',
-        'time_preparation',
-        'time_repos',
-        'time_cuisson',
-        'difficulty',
-        'cost',
-        'steps',
-        'createdAt'
-    ];
-
     public function __construct()
     {
         $this->manager = EntityManager::getConnection();
@@ -54,6 +40,29 @@ class RecetteRepository {
         $recette->setIngredients($ingredients);
 
         return $recette;
+    }
+
+    public function findLatest($nb): array
+    {
+        $stmt = $this->manager->query("SELECT * FROM recette ORDER BY created_at LIMIT ".$nb);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return array_map(fn($row) => new Recette($row), $data);
+    }
+
+
+    public function delete($id): bool
+    {
+        $sql = "DELETE FROM recette WHERE id = :id";
+        $joins = "DELETE FROM recette_ingredient WHERE recette_id = :id";
+
+        $stmt = $this->manager->prepare($sql);
+        $stmt->execute(['id' => $id]);
+
+        $stmt = $this->manager->prepare($joins);
+        $stmt->execute(['id' => $id]);
+
+        return true;
+
     }
 
     public function save(Recette $recette): Recette

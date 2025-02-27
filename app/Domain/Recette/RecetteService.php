@@ -34,6 +34,11 @@ class RecetteService {
         return $this->recetteRepository->findById($id);
     }
 
+    public function getLatest($nb = 3): array
+    {
+        return $this->recetteRepository->findLatest($nb);
+    }
+
     public function update($data) {
         return $this->createRecetteFromData($data);
     }
@@ -45,6 +50,7 @@ class RecetteService {
         if(!$html || !$data) {
             return null;
         }
+
         $is_valid = $this->isValidData($data);
         if($is_valid) {
             $recette = $this->createRecetteFromData($data);
@@ -73,6 +79,11 @@ class RecetteService {
         $recette->setIngredients($ingredients);
 
         return $recette;
+    }
+
+    public function delete($id): bool
+    {
+        return $this->recetteRepository->delete($id);
     }
 
     public function isValidData($array) {

@@ -18,19 +18,19 @@
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="title has-text-centered">🔥 Recettes les plus populaires</h2>
+        <h2 class="title has-text-centered">🔥 Les dernières recettes</h2>
         <div class="columns is-multiline">
-            <!-- Exemple de recette -->
-            <div class="column is-4">
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="title is-5">🍕 Pizza maison</h3>
-                        <p>Une délicieuse pizza faite maison avec une pâte croustillante.</p>
-                        <a href="/recette/1" class="button is-primary is-small">Voir la recette</a>
+            <?php foreach($latest as $recette):?>
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="title is-5"><?= $recette->getTitle();?></h3>
+                            <p><?= $recette->getDescription();?></p>
+                            <a href="<?= getLink('recette_show', ['id' => $recette->getId()]);?>" class="button is-primary is-small">Voir la recette</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Ajouter d'autres recettes dynamiquement ici -->
+            <?php endforeach;?>
         </div>
     </div>
 </section>
