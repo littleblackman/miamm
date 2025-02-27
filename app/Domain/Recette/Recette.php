@@ -9,24 +9,24 @@ class Recette {
     use Hydrator;
 
     private ?int $id = null;
-    private string $title;
-    private string $description;
-    private string $category;
+    public string $title;
+    public string $description;
+    public string $category;
 
-    private string $time_total;
+    public string $time_total;
 
-    private string $time_preparation;
+    public string $time_preparation;
 
-    private string $time_repos;
+    public string $time_repos;
 
-    private string $time_cuisson;
+    public string $time_cuisson;
 
-    private string $difficulty;
+    public string $difficulty;
 
-    private string $cost;
+    public string $cost;
 
-    private string $steps;
-    private string $createdAt;
+    public string $steps;
+    public string $createdAt;
 
     public function __construct($array = null)
     {
