@@ -98,5 +98,9 @@
         <div class="control">
             <button class="button is-primary" type="submit">Mettre à jour</button>
         </div>
+
+        <div class="control">
+            <button class="button is-secondary" type="submit">Voir la recette</button>
+        </div>
     </div>
 </form>

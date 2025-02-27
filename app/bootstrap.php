@@ -10,8 +10,11 @@ use App\Core\ErrorHandler;
 
 // load all classes
 Config::load(__DIR__ . '/.env');
-Autoloader::register();
-ErrorHandler::register();
+//Autoloader::register();
+//ErrorHandler::register();
+
+echo 's'; exit;
+
 
 // Gérer les erreurs en fonction de l'environnement
 if (Config::get('APP_ENV') === 'dev' && Config::get('DISPLAY_ERRORS') === 'true') {
