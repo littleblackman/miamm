@@ -30,6 +30,13 @@ class RecetteService {
         return $this->recetteRepository->findAll();
     }
 
+    public function find($id) {
+        return $this->recetteRepository->findById($id);
+    }
+
+    public function update($data) {
+        return $this->createRecetteFromData($data);
+    }
 
     public function createFromUrl(string $url): Recette
     {
@@ -40,7 +47,6 @@ class RecetteService {
         } else {
             $recette = $this->createRecetteFromIA($html, $data);
         }
-        $this->repository->save($recette);
         return $recette;
     }
 
@@ -54,14 +60,13 @@ class RecetteService {
         $recette = new Recette($data);
         $recette = $this->recetteRepository->save($recette);
 
-
         // save jointure ingredients_recette
         foreach($ingredients as $ingredient) {
             $this->recetteRepository->addIngredient($recette->getId(), $ingredient);
         }
 
-
-        exit;
+        // ajout des ingrédients à recette
+        $recette->setIngredients($ingredients);
 
         return $recette;
     }

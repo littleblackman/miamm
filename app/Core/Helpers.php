@@ -30,17 +30,19 @@ if (!function_exists('getLink')) {
     function getLink(string $name, array $values = []): string
     {
 
+        $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
         $route = ($_SESSION['namedRoutes'][$name]) ?? $name;
 
         if (!empty($values)) {
+
             preg_match_all('/\{(\w+)\}/', $route, $matches);
             foreach ($matches[1] as $index => $param) {
-                if (isset($values[$index])) {
-                    $route = str_replace("{" . $param . "}", $values[$index], $route);
+                if (isset($values[$param])) {
+                    $route = str_replace("{" . $param . "}", $values[$param], $route);
                 }
             }
         }
 
-        return '/' . ltrim($route, '/');
+        return $baseUrl.'/' . ltrim($route, '/');
     }
 }

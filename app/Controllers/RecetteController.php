@@ -33,10 +33,20 @@ class RecetteController
 
     public function store(Request $request): null
     {
-
         $recette_url = $request->param('recette_url');
-        $this->recetteService->createFromUrl($recette_url);
+        $recette = $this->recetteService->createFromUrl($recette_url);
+        return $this->view->redirect('recette_edit', ['id' => $recette->getId()]);
+    }
 
-        return $this->view->redirect('/recettes');
+    public function edit(Request $request) {
+        $id = $request->param('id');
+        $recette = $this->recetteService->find($id);
+        return $this->view->render('pages.recette.edit', ['recette' => $recette]);
+    }
+
+    public function update(Request $request) {
+
+        $recette = $this->recetteService->update($request->params());
+        return $this->view->redirect('recette_edit', ['id' => $recette->getId()]);
     }
 }

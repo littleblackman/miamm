@@ -37,5 +37,14 @@ class View
         }
     }
 
+    public function redirect($route, $params = []): void
+    {
+        $url = $route;
+        $url = getLink($url, $params);
+        header('Location: ' . $url);
+        exit;
+    }
+
+
 
 }

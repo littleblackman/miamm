@@ -26,6 +26,8 @@ class Recette {
     public string $cost;
 
     public string $steps;
+
+    public array $ingredients = [];
     public string $createdAt;
 
     public function __construct($array = null)
@@ -143,7 +145,7 @@ class Recette {
         $this->cost = $cost;
     }
 
-    public function getSteps(): string
+    public function getSteps(): array
     {
         return json_decode($this->steps, true) ?? [];
     }
@@ -161,6 +163,16 @@ class Recette {
         }
         $this->steps = $steps;
         return $this;
+    }
+
+    public function setIngredients(array $ingredients): void
+    {
+        $this->ingredients = $ingredients;
+    }
+
+    public function getIngredients(): array
+    {
+        return $this->ingredients;
     }
 
 }

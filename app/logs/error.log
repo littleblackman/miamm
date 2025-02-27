@@ -117,3 +117,18 @@
 [2025-02-27 10:18:57] ErrorException: Undefined array key "unit" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 90
 [2025-02-27 10:21:12] ErrorException: Undefined property: App\Domain\Recette\RecetteService::$repository in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 30
 [2025-02-27 10:23:00] ErrorException: Undefined property: App\Domain\Recette\RecetteService::$repository in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 30
+[2025-02-27 10:31:38] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ingredients' in 'field list' in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 57
+[2025-02-27 10:35:40] ErrorException: Undefined array key 0 in /home/nitro/Sites/miamm/app/Core/Helpers.php on line 40
+[2025-02-27 10:37:49] Error: Call to undefined method App\Controllers\RecetteController::edit() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-27 10:38:05] Error: Call to undefined method App\Controllers\RecetteController::edit() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-27 10:38:20] Error: Call to undefined method App\Controllers\RecetteController::edit() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-27 10:40:17] ErrorException: include(/home/nitro/Sites/miamm/app/Views/pages/recette/edit.php): Failed to open stream: No such file or directory in /home/nitro/Sites/miamm/app/Core/View.php on line 28
+[2025-02-27 10:51:41] TypeError: App\Domain\Recette\Recette::getSteps(): Return value must be of type string, array returned in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 150
+[2025-02-27 10:51:58] TypeError: App\Domain\Recette\Recette::getSteps(): Return value must be of type string, array returned in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 150
+[2025-02-27 10:52:00] TypeError: App\Domain\Recette\Recette::getSteps(): Return value must be of type string, array returned in /home/nitro/Sites/miamm/app/Domain/Recette/Recette.php on line 150
+[2025-02-27 10:52:23] ErrorException: htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 89
+[2025-02-27 10:52:57] ErrorException: htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 89
+[2025-02-27 10:53:03] ErrorException: htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 89
+[2025-02-27 10:59:07] ParseError: syntax error, unexpected token ";", expecting ")" in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 1
+[2025-02-27 11:02:38] Error: Call to undefined method App\Core\Request::all() in /home/nitro/Sites/miamm/app/Controllers/RecetteController.php on line 50
+[2025-02-27 11:07:01] ErrorException: Undefined array key "id" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 64
