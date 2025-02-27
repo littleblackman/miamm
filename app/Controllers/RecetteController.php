@@ -35,6 +35,14 @@ class RecetteController
     {
         $recette_url = $request->param('recette_url');
         $recette = $this->recetteService->createFromUrl($recette_url);
+
+        if(!$recette) {
+
+            // creation d'un message d'erreur en session
+
+            return $this->view->redirect('recette_create');
+        }
+
         return $this->view->redirect('recette_edit', ['id' => $recette->getId()]);
     }
 
@@ -48,5 +56,11 @@ class RecetteController
 
         $recette = $this->recetteService->update($request->params());
         return $this->view->redirect('recette_edit', ['id' => $recette->getId()]);
+    }
+
+    public function show(Request $request)
+    {
+        $recette = $this->recetteService->find($request->param('id'));
+        return $this->view->render('pages.recette.show', ['recette' => $recette]);
     }
 }

@@ -38,9 +38,13 @@ class RecetteService {
         return $this->createRecetteFromData($data);
     }
 
-    public function createFromUrl(string $url): Recette
+    public function createFromUrl(string $url): ?Recette
     {
         ['html' => $html, 'data' => $data] = $this->scraperService->getContent($url);
+
+        if(!$html || !$data) {
+            return null;
+        }
         $is_valid = $this->isValidData($data);
         if($is_valid) {
             $recette = $this->createRecetteFromData($data);

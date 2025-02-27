@@ -94,13 +94,15 @@
         </div>
     </div>
 
-    <div class="field">
+    <div class="flex" style="display: flex; justify-content: space-around;">
         <div class="control">
             <button class="button is-primary" type="submit">Mettre à jour</button>
         </div>
 
         <div class="control">
-            <button class="button is-secondary" type="submit">Voir la recette</button>
+            <a href="<?= getLink('recette_show', ['id' => $recette->getId()]) ?>" class="button is-info">
+                Voir la recette
+            </a>
         </div>
     </div>
 </form>

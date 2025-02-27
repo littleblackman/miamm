@@ -34,7 +34,6 @@ if (!function_exists('getLink')) {
         $route = ($_SESSION['namedRoutes'][$name]) ?? $name;
 
         if (!empty($values)) {
-
             preg_match_all('/\{(\w+)\}/', $route, $matches);
             foreach ($matches[1] as $index => $param) {
                 if (isset($values[$param])) {

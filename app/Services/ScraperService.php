@@ -76,11 +76,14 @@ class ScraperService
     }
 
 
-    public function getContent($url): array
+    public function getContent($url): ?array
     {
         $this->domain = $this->getDomain($url);
-        $html = $this->getHtml($url);
-        $html = $this->cleanHtml($html);
+        if(!$html = $this->getHtml($url)) return null;
+
+        if($html) {
+            $html = $this->cleanHtml($html);
+        }
         $data = [
             "title" => "",
             "time_total" => "",
@@ -110,6 +113,7 @@ class ScraperService
 
     public function getHtml($url): ?string
     {
+
         curl_setopt($this->ch, CURLOPT_URL, $url);
         $html = curl_exec($this->ch);
         if ($html === false) {
@@ -120,7 +124,6 @@ class ScraperService
         if ($httpCode !== 200 || !$html) {
             return null;
         }
-
         return $html;
     }
 

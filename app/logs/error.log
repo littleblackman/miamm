@@ -132,3 +132,11 @@
 [2025-02-27 10:59:07] ParseError: syntax error, unexpected token ";", expecting ")" in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 1
 [2025-02-27 11:02:38] Error: Call to undefined method App\Core\Request::all() in /home/nitro/Sites/miamm/app/Controllers/RecetteController.php on line 50
 [2025-02-27 11:07:01] ErrorException: Undefined array key "id" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 64
+[2025-02-27 14:12:20] TypeError: App\Services\ScraperService::cleanHtml(): Argument #1 ($html) must be of type string, null given, called in /home/nitro/Sites/miamm/app/Services/ScraperService.php on line 83 in /home/nitro/Sites/miamm/app/Services/ScraperService.php on line 127
+[2025-02-27 14:13:22] TypeError: App\Domain\Recette\RecetteService::createRecetteFromIA(): Argument #1 ($html) must be of type string, null given, called in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 48 in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 87
+[2025-02-27 14:14:47] TypeError: App\Domain\Recette\RecetteService::createRecetteFromIA(): Argument #1 ($html) must be of type string, null given, called in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 48 in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 87
+[2025-02-27 14:15:21] ErrorException: foreach() argument must be of type array|object, null given in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 77
+[2025-02-27 14:16:15] Exception: Impossible de récupérer les données de la recette in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteService.php on line 46
+[2025-02-27 14:16:52] Error: Call to a member function getId() on null in /home/nitro/Sites/miamm/app/Controllers/RecetteController.php on line 38
+[2025-02-27 14:30:29] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
+[2025-02-27 14:41:26] TypeError: json_decode(): Argument #1 ($json) must be of type string, array given in /home/nitro/Sites/miamm/app/Views/pages/recette/show.php on line 45
