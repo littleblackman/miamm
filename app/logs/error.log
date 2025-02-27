@@ -141,3 +141,5 @@
 [2025-02-27 14:30:29] Error: Call to undefined method App\Controllers\RecetteController::show() in /home/nitro/Sites/miamm/app/Core/Router.php on line 119
 [2025-02-27 14:41:26] TypeError: json_decode(): Argument #1 ($json) must be of type string, array given in /home/nitro/Sites/miamm/app/Views/pages/recette/show.php on line 45
 [2025-02-27 14:52:24] Error: Call to a member function getId() on null in /home/nitro/Sites/miamm/app/Views/pages/recette/edit.php on line 1
+[2025-02-27 15:00:31] ErrorException: Undefined array key "name" in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 93
+[2025-02-27 15:02:05] ErrorException: Undefined variable $ingredients in /home/nitro/Sites/miamm/app/Domain/Recette/RecetteRepository.php on line 92

@@ -117,10 +117,11 @@ class RecetteService {
                     
                     N'oublie pas je veux strictement en retour le tableau associatif JSON complet et corrigé.
                     " ;
-      // $result = $this->iaService->send($prompt); // uncomment
+       $result = $this->iaService->send($prompt); // uncomment
 
        // mock result
-       $result = "```json
+       /**
+        $result = "```json
                     {
                         \"title\": \"Coquilles Saint Jacques sur lit de poireaux\",
                         \"time_total\": \"35 min\",
@@ -148,7 +149,7 @@ class RecetteService {
                             \"Étaler la fondue de poireaux bien chaude dans 4 assiettes et disposer les noix de Saint Jacques dessus. Servir aussitôt.\"
                         ]
                     }
-                    ```";
+                    ```";**/
 
        $jsonString = trim($result, "```json \n");
        $data = json_decode($jsonString, true);
