@@ -44,7 +44,7 @@ class RecetteRepository {
 
     public function findLatest($nb): array
     {
-        $stmt = $this->manager->query("SELECT * FROM recette ORDER BY created_at LIMIT ".$nb);
+        $stmt = $this->manager->query("SELECT * FROM recette ORDER BY created_at DESC LIMIT ".$nb);
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return array_map(fn($row) => new Recette($row), $data);
     }
