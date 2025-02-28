@@ -60,7 +60,7 @@
         <div class="mb-5">
             <h3>Source <?= $recette->getSite();?></h3>
             <p>
-                <a href="?= $recette->getOriginUrl();?>" target="_blank">
+                <a href="<?= $recette->getOriginUrl();?>" target="_blank">
                     <?= $recette->getOriginUrl();?>
                 </a>
             </p>
