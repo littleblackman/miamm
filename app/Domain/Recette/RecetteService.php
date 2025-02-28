@@ -164,10 +164,10 @@ class RecetteService {
 
        $jsonString = trim($result, "```json \n");
        $data = json_decode($jsonString, true);
-
+/**
         $data['description'] = "Un délicieux plat principal de filet mignon garni de roquefort et arrosé de Porto, parfait pour impressionner vos invités.";
         $data['tags'] = "filet mignon, roquefort, porto, viande, plat principal";
-        $data['category'] = "plat";
+        $data['category'] = "plat";**/
 
        return $this->createRecetteFromData($data);
 

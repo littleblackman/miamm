@@ -9,6 +9,11 @@
                     <div class="control">
                         <input class="input" type="url" name="recette_url" placeholder="https://example.com/recette" required>
                     </div>
+
+                    <p>
+                        Ajoutez le lien de la recette pour la partager avec la communauté.<br/>
+                        Pour la phase de test, nous vous recommandons le site <a href="https//www.marmiton.org" target="_blank">Marmiton</a>
+                    </p>
                 </div>
 
                 <div class="field">
